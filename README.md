@@ -291,9 +291,18 @@ _.map(users, 'id <= 2 ? id : 0')
 ```
 ###max
 Find and return the largest number in a given array.  
+if an `expression` is provided, will return max value by expression.  
 **Usage:** `_.max(array)`
 ```js
 _.max([1,2,3,4,7,8,9]) // → 9
+
+//By expression
+var users = [
+  { name: 'foo', score: 89 },
+  { name: 'bar', score: 32 },
+  { name: 'baz', score: 49 }
+];
+_.max(users, 'score'); // → { name: 'foo', score: 89 }
 
 //Chaining example
 var users = [
@@ -309,9 +318,19 @@ _(users)
 ```
 ###min
 Find and return the lowest number in a given array.  
+if an `expression` is provided, will return min value by expression.  
 **Usage:** `_.min(array)`
 ```js
 _.min([1,2,3,4,7,8,9]) // → 1
+
+//By expression
+var users = [
+  { user: { score: 197 } },
+  { user: { score: 212 } },
+  { user: { score: 978 } },
+  { user: { score: 121 } }
+];
+_.min(users, 'user.score') // → { user: { score: 121 } }
 
 //Chaining example
 var users = [
